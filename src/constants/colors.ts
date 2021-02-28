@@ -1,16 +1,15 @@
 const colors = {
-  brightBlue: '#0062ff',
-  blueish: '#1162FB',
-  white: '#ffffff',
-  dark: '#2e3c4b',
-  darkThree: '#272a3f',
-  battleshipGrey: '#74797e',
-  grey: '#E5E5E5',
-  black10: '#0000001a',
-  black08: '#00000008',
-  whiteSeven: '#F4F7FA',
-  red: '#C10C0C',
-  appleGreen: '#53AC12',
+  blue: '#7C8CB1',
+  rose: '#B17C7C',
+  green: '#88B17C',
+  sand: '#DBBCA3',
+  darkGreen: '#7CB1AF',
+  pink: '#DBA3D2',
+  pastelPink: '#DBA3A3',
+  lime: '#D2DBA3',
+  purple: '#A3A7DB',
+  purpleBlue: '#7B85F9',
+  black: '#373737',
 };
 
 export default colors;
