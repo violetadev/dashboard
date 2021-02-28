@@ -1,6 +1,5 @@
-import React from 'react';
-
 import Basic from '@layouts/Basic';
+import React from 'react';
 
 const Main: React.FC = () => {
   return (
