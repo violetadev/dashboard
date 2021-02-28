@@ -13,7 +13,6 @@ const StyledContent = styled.div`
   top: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
-  width: 220px;
 
   @media only screen and (min-width: ${({ theme }) =>
       theme.breakpoints.desktop}) {
