@@ -8,9 +8,7 @@ const Main: React.FC = () => {
   return (
     <Basic>
       <Wrapper>
-        <Content>
-          <Tag id='1' color='#fd0d90' text='arts and culture' />
-        </Content>
+        <Content>test</Content>
       </Wrapper>
     </Basic>
   );
