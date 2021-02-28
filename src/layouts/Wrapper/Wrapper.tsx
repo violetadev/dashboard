@@ -2,19 +2,18 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledContent = styled.div`
-  width: 220px;
-  min-height: 400px;
   background: ${({ theme }) => theme.colors.white};
-  box-shadow: 38px 37px 99px #0000004d;
-
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  height: 100%;
-  width: 100%;
   border-radius: 0px;
+  box-shadow: 38px 37px 99px #0000004d;
+  height: 100%;
+  left: 50%;
+  margin: 0;
+  min-height: 400px;
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  width: 220px;
 
   @media only screen and (min-width: ${({ theme }) =>
       theme.breakpoints.desktop}) {
