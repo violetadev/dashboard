@@ -1,7 +1,7 @@
 {
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
-    "target": "es5",
+    "target": "es6",
     "lib": [
       "dom",
       "dom.iterable",
@@ -29,7 +29,8 @@
     ".eslintrc.js"
   ],
   "exclude": [
-    "config-overrides.js"
+    "config-overrides.js",
+    "./node_modules/**/*"
   ],
   "typeRoots": [
     "./types"
