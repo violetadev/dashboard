@@ -10,7 +10,7 @@ export default function throttle(func: () => void, limit: number): () => void {
 
     if (!inThrottle) {
       inThrottle = true;
-      func.apply(context, args);
+      func.apply(context, args as any);
       setTimeout(() => (inThrottle = false), limit);
     }
   };

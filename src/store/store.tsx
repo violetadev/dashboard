@@ -3,7 +3,7 @@ import { applyMiddleware, createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import rootReducer from '@redux/reducers/root';
 import thunk from 'redux-thunk';
-import { loadState, saveState } from 'helpers/localStorage';
+import { loadState, saveState } from '../helpers/localStorage';
 import throttle from '../helpers/throttle';
 
 const persistedState = loadState();
