@@ -1,23 +1,19 @@
-import { applyMiddleware, createStore } from 'redux';
-
-import { composeWithDevTools } from 'redux-devtools-extension';
+import { configureStore } from '@reduxjs/toolkit';
 import rootReducer from '@redux/reducers/root';
-import thunk from 'redux-thunk';
 import { loadState, saveState } from '../helpers/localStorage';
 import throttle from '../helpers/throttle';
 
 const persistedState = loadState();
 
-const store = createStore(
-  rootReducer,
-  persistedState,
-  composeWithDevTools(applyMiddleware(thunk))
-);
+export const store = configureStore({
+  reducer: { rootReducer, persistedState },
+  devTools: process.env.NODE_ENV !== 'production',
+});
 
 store.subscribe(
   throttle(() => {
     saveState({
-      auth: store.getState().auth,
+      auth: store.getState().rootReducer.auth,
     });
   }, 1000)
 );
