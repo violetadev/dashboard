@@ -3,13 +3,23 @@ import { applyMiddleware, createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import rootReducer from '@redux/reducers/root';
 import thunk from 'redux-thunk';
+import { loadState, saveState } from 'helpers/localStorage';
+import throttle from '../helpers/throttle';
 
-export const persistedLocalStorage = JSON.parse(
-  localStorage.getItem('persistedState') || '{}'
-);
+const persistedState = loadState();
 
-export const store = createStore(
+const store = createStore(
   rootReducer,
-  persistedLocalStorage,
+  persistedState,
   composeWithDevTools(applyMiddleware(thunk))
 );
+
+store.subscribe(
+  throttle(() => {
+    saveState({
+      auth: store.getState().auth,
+    });
+  }, 1000)
+);
+
+export default store;
