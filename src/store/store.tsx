@@ -13,9 +13,10 @@ export const store = configureStore({
 store.subscribe(
   throttle(() => {
     saveState({
-      auth: store.getState().rootReducer.auth,
+      userSettings: store.getState().rootReducer.userSettings,
     });
   }, 1000)
 );
 
-export default store;
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
