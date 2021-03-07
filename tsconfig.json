@@ -2,7 +2,11 @@
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
     "target": "es6",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -16,9 +20,20 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "types": ["jest", "node"]
+    "types": [
+      "jest",
+      "node"
+    ]
   },
-  "include": ["src", ".eslintrc.js"],
-  "exclude": ["config-overrides.js", "./node_modules/**/*"],
-  "typeRoots": ["./types"]
+  "include": [
+    "src",
+    ".eslintrc.js"
+  ],
+  "exclude": [
+    "config-overrides.js",
+    "./node_modules/**/*"
+  ],
+  "typeRoots": [
+    "./types"
+  ]
 }
