@@ -19,7 +19,7 @@ const GlobalStyles = createGlobalStyle`
     borderRadius:  ${({ theme }) => theme.input.common.borderRadius};
     height:  ${({ theme }) => theme.input.common.height};
     padding: 20px;
-    width:  ${({ theme }) => theme.input.common.width};
+    min-width:  ${({ theme }) => theme.input.common.minWidth};
   }
 
   body {

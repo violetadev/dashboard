@@ -3,16 +3,20 @@ import styled from 'styled-components';
 import { ErrorMessage, Field } from 'formik';
 
 const StyledSubtitle = styled.h2`
+  align-self: center;
   color: ${props => props.theme.colors.purpleBlue};
 `;
 
 const StyledFormStepOne = styled.div`
   display: flex;
   flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   > * {
     margin: 20px 0;
+  }
+  input {
+    width: 100%;
   }
 `;
 

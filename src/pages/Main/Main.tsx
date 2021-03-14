@@ -1,17 +1,26 @@
-import Basic from '@layouts/Basic';
-import Content from '@layouts/Content';
 import React from 'react';
-import Tag from '@components/tag';
+import { useSelector } from 'react-redux';
+import { RootState } from '@redux/reducers/root';
+import Basic from '@layouts/Basic';
 import Wrapper from '@layouts/Wrapper';
 import Onboarding from '../Onboarding/Onboarding';
 
 const Main: React.FC = () => {
+  const userSettings = useSelector((state: RootState) => state.userSettings);
+
   return (
     <Basic>
       <Wrapper>
-        <Content>
+        {!userSettings.topics.length ? (
           <Onboarding />
-        </Content>
+        ) : (
+          <div>
+            <h1>
+              Welcome &nbsp;
+              {userSettings.userName}
+            </h1>
+          </div>
+        )}
       </Wrapper>
     </Basic>
   );

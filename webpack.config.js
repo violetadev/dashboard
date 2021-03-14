@@ -16,4 +16,19 @@ module.exports = {
       '@hooks': path.resolve(`${__dirname}/src/hooks`),
     },
   },
+  module: {
+    rules: [
+      {
+        test: /\.svg$/,
+        use: [
+          {
+            loader: 'svg-url-loader',
+            options: {
+              limit: 10000,
+            },
+          },
+        ],
+      },
+    ],
+  },
 };

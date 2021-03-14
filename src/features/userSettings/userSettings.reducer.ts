@@ -28,17 +28,15 @@ const initialState: UserSettingsStateInterface = {
   topics: [],
 };
 
-export const userSettingsReducer = (
+const userSettingsReducer = (
   state = initialState,
   action: { type: string; payload: any }
 ): UserSettingsStateInterface => {
   switch (action.type) {
     case SET_USER_NAME: {
-      console.log('lala', action);
       return { ...state, userName: action.payload.data };
     }
     case SET_USER_TOPICS: {
-      console.log('lala2', action);
       return { ...state, topics: action.payload.data };
     }
 

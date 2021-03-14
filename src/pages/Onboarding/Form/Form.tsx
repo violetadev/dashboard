@@ -29,6 +29,7 @@ const StyledForm = styled.form`
   display: flex;
   flex-flow: column wrap;
   margin: 20px;
+  flex: 1;
 `;
 
 const FormSchema = Yup.object().shape({
