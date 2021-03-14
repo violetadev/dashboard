@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const StyledTag = styled.div`
-  background: ${props => props.color};
+const StyledTag = styled.div<{ disabled: boolean }>`
+  background: ${props => (props.disabled ? 'grey ' : props.color)};
   font-family: Noto Sans JP;
   min-width: 100px;
   max-width: fit-content;
@@ -22,11 +22,19 @@ interface TagProps {
   id: string;
   onClickHandler?: (value: string) => void;
   text: string;
+  disabled: boolean;
 }
-const Tag: React.FC<TagProps> = ({ id, text, color, onClickHandler }) => {
+const Tag: React.FC<TagProps> = ({
+  id,
+  text,
+  color,
+  onClickHandler,
+  disabled,
+}) => {
   return (
     <StyledTag
       color={color}
+      disabled={disabled}
       onClick={onClickHandler ? () => onClickHandler(id) : undefined}
     >
       {text}

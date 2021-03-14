@@ -1,19 +1,29 @@
-import { configureStore } from '@reduxjs/toolkit';
-import rootReducer from '@redux/reducers/root';
+/* eslint-disable no-underscore-dangle */
+import { applyMiddleware, compose, createStore } from 'redux';
+import rootMiddleware from '@redux/middlewares/root';
+import rootReducer from '../redux/reducers/root';
 import { loadState, saveState } from '../helpers/localStorage';
 import throttle from '../helpers/throttle';
 
-const persistedState = loadState();
+declare global {
+  interface Window {
+    __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: typeof compose;
+  }
+}
 
-export const store = configureStore({
-  reducer: { rootReducer, persistedState },
-  devTools: process.env.NODE_ENV !== 'production',
-});
+const persistedState = loadState();
+const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+export const store = createStore(
+  rootReducer,
+  persistedState,
+  composeEnhancer(applyMiddleware(...rootMiddleware))
+);
 
 store.subscribe(
   throttle(() => {
     saveState({
-      userSettings: store.getState().rootReducer.userSettings,
+      userSettings: store.getState().userSettings,
     });
   }, 1000)
 );

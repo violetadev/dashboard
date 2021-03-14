@@ -12,7 +12,7 @@ const input = {
     borderRadius: '35px',
     height: '50px',
     padding: '30px 10px',
-    width: '630px',
+    minWidth: '200px',
   },
 };
 

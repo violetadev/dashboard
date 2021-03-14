@@ -13,6 +13,7 @@ const StyledContent = styled.div`
   top: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
+  display: flex;
 
   @media only screen and (min-width: ${({ theme }) =>
       theme.breakpoints.desktop}) {
@@ -22,7 +23,6 @@ const StyledContent = styled.div`
 
   @media only screen and (min-width: ${({ theme }) =>
       theme.breakpoints.tablet}) {
-    padding: 200px 75px 75px 75px;
     width: 80vw;
     height: 90vh;
     border-radius: 20px;

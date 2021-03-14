@@ -13,6 +13,15 @@ const GlobalStyles = createGlobalStyle`
     font-size: 16px;
   }
 
+  input {
+    background:  ${({ theme }) => theme.input.common.background};
+    border: ${({ theme }) => theme.input.common.border};
+    borderRadius:  ${({ theme }) => theme.input.common.borderRadius};
+    height:  ${({ theme }) => theme.input.common.height};
+    padding: 20px;
+    min-width:  ${({ theme }) => theme.input.common.minWidth};
+  }
+
   body {
     background: ${({ theme }) => theme.backgrounds.pageBackground};
   }
