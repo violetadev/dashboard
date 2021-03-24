@@ -1,6 +1,11 @@
-import thunk from 'redux-thunk';
+import newsArticlesMiddleware from '../../features/newsArticles/newsArticles.middleware';
 import userSettingsMiddleware from '../../features/userSettings/userSettings.middleware';
+import apiMiddleware from '../../features/request/request.middleware';
 
-const rootMiddleware = [thunk, userSettingsMiddleware];
+const rootMiddleware = [
+  userSettingsMiddleware,
+  newsArticlesMiddleware,
+  apiMiddleware,
+];
 
 export default rootMiddleware;

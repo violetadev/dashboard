@@ -34,6 +34,7 @@ module.exports = {
     ],
     'react/jsx-props-no-spreading': 'off',
     'no-shadow': 'off',
+    'no-debugger': 0,
     'react-redux/connect-prefer-named-arguments': 'off',
     'react-redux/prefer-separate-component-file': 'off',
     'prettier/prettier': [

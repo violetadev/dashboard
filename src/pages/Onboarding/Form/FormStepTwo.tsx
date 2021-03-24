@@ -29,7 +29,7 @@ const FormStepTwo: React.FC<{
       color: theme.colors.green,
     },
     { label: 'tech', keyword: 'tech', color: theme.colors.pastelPink },
-    { label: 'sports', keyword: 'sports', color: theme.colors.blue },
+    { label: 'sports', keyword: 'sport', color: theme.colors.blue },
     { label: 'opinion', keyword: 'opinion', color: theme.colors.pink },
     { label: 'culture', keyword: 'culture', color: theme.colors.rose },
     { label: 'lifestyle', keyword: 'lifestyle', color: theme.colors.sand },

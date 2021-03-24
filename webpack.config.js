@@ -1,7 +1,10 @@
 const path = require('path');
+const Dotenv = require('dotenv-webpack').config();
 
-module.exports = {
-  resolve: {
+module.exports = function (env, argv) {
+  return {
+    // resolve: {
+    mode: env.production ? 'production' : 'development',
     alias: {
       '@components': path.resolve(`${__dirname}/src/components`),
       '@redux': path.resolve(`${__dirname}/src/redux`),
@@ -15,8 +18,9 @@ module.exports = {
       '@lang': path.resolve(`${__dirname}/src/lang`),
       '@hooks': path.resolve(`${__dirname}/src/hooks`),
     },
-  },
-  module: {
+    // },
+    // module: {
+    plugins: [new Dotenv({ path: path.resolve(__dirname, '.env.' + dotenv) })],
     rules: [
       {
         test: /\.svg$/,
@@ -30,5 +34,6 @@ module.exports = {
         ],
       },
     ],
-  },
+    // },
+  };
 };

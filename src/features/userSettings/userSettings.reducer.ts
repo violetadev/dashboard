@@ -9,7 +9,7 @@ export const SET_USER_TOPICS = 'SET_USER_TOPICS';
 export type Action = {
   type: string;
   payload: {
-    data: any;
+    data: unknown;
   };
 };
 

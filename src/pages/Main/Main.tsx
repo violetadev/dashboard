@@ -1,12 +1,19 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '@redux/reducers/root';
 import Basic from '@layouts/Basic';
 import Wrapper from '@layouts/Wrapper';
+import Spinner from '@components/spinner/Spinner';
 import Onboarding from '../Onboarding/Onboarding';
+import { getNews } from '../../features/newsArticles/newsArticles.reducer';
 
 const Main: React.FC = () => {
+  const dispatch = useDispatch();
   const userSettings = useSelector((state: RootState) => state.userSettings);
+
+  useEffect(() => {
+    dispatch(getNews(['tech', 'sport']));
+  }, []);
 
   return (
     <Basic>
@@ -18,6 +25,7 @@ const Main: React.FC = () => {
             <h1>
               Welcome &nbsp;
               {userSettings.userName}
+              <Spinner />
             </h1>
           </div>
         )}
