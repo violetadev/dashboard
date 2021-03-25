@@ -3,7 +3,7 @@
 The personal dashboard displays information based on user's preferences, location and timezone.
 
 ## Design (designed by me)
-https://xd.adobe.com/view/0fb30f12-1ae0-4225-b6d4-44584b978cc3-5ae0/
+https://xd.adobe.com/view/19e7e42f-6b0f-46a7-b630-8dd4463e1c4e-4cb4/
 
 ## Features
 - News tailored to the user's picked favorite topics
