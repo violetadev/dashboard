@@ -1,6 +1,7 @@
 /* eslint-disable no-underscore-dangle */
+import thunk from 'redux-thunk';
 import { applyMiddleware, compose, createStore } from 'redux';
-import rootMiddleware from '@redux/middlewares/root';
+import rootMiddleware from '../redux/middlewares/root';
 import rootReducer from '../redux/reducers/root';
 import { loadState, saveState } from '../helpers/localStorage';
 import throttle from '../helpers/throttle';
@@ -17,7 +18,7 @@ const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 export const store = createStore(
   rootReducer,
   persistedState,
-  composeEnhancer(applyMiddleware(...rootMiddleware))
+  composeEnhancer(applyMiddleware(thunk, ...rootMiddleware))
 );
 
 store.subscribe(
