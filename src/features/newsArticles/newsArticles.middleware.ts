@@ -3,10 +3,7 @@ import { apiRequest } from '../request/request.reducer';
 
 import { GET_NEWS } from './newsArticles.reducer';
 
-const newsArticlesMiddleware: Middleware = ({
-  dispatch,
-  getState,
-}) => next => action => {
+const newsArticlesMiddleware: Middleware = ({ dispatch }) => next => action => {
   switch (action.type) {
     case GET_NEWS:
       action.payload.data.forEach(topic => {

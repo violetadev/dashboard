@@ -28,11 +28,11 @@ const FormStepTwo: React.FC<{
       keyword: 'science',
       color: theme.colors.green,
     },
-    { label: 'tech', keyword: 'tech', color: theme.colors.pastelPink },
+    { label: 'tech', keyword: 'technology', color: theme.colors.pastelPink },
     { label: 'sports', keyword: 'sport', color: theme.colors.blue },
-    { label: 'opinion', keyword: 'opinion', color: theme.colors.pink },
+    { label: 'opinion', keyword: 'commentisfree', color: theme.colors.pink },
     { label: 'culture', keyword: 'culture', color: theme.colors.rose },
-    { label: 'lifestyle', keyword: 'lifestyle', color: theme.colors.sand },
+    { label: 'lifestyle', keyword: 'lifeandstyle', color: theme.colors.sand },
     { label: 'business', keyword: 'business', color: theme.colors.darkGreen },
     { label: 'world', keyword: 'world', color: theme.colors.lime },
   ];
@@ -50,7 +50,7 @@ const FormStepTwo: React.FC<{
               text={topic.label}
               color={topic.color}
               onClickHandler={() => {}}
-              disabled={!selectedTopics.includes(topic.label)}
+              disabled={!selectedTopics.includes(topic.keyword)}
             />
             <CheckboxInput
               type='checkbox'

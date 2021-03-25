@@ -1,22 +1,6 @@
-import axios, { Method } from 'axios';
+import axios from 'axios';
 import { apiSuccess, apiError } from '../features/request/request.reducer';
 
-interface IPayload {
-  entity: string;
-  url: string;
-  method: Method;
-  body: unknown;
-  headers: unknown;
-  extraData: unknown;
-  data: unknown;
-  meta: {
-    entity: string;
-    method: Method;
-    url: string;
-    headers: unknown;
-    extraData: unknown;
-  };
-}
 const requester = (payload: any, dispatch: any): any => {
   const { entity, method, url, headers, extraData } = payload.meta;
 

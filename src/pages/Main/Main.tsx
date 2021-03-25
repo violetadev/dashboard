@@ -12,8 +12,10 @@ const Main: React.FC = () => {
   const userSettings = useSelector((state: RootState) => state.userSettings);
 
   useEffect(() => {
-    dispatch(getNews(['tech', 'sport']));
-  }, []);
+    if (userSettings.topics.length > 0) {
+      dispatch(getNews(userSettings.topics));
+    }
+  }, [userSettings]);
 
   return (
     <Basic>

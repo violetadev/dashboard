@@ -3,11 +3,11 @@ import { API_SUCCESS } from '../request/request.reducer';
 export interface NewsStateInterface {
   news: {
     science: string[];
-    tech: string[];
+    technology: string[];
     sport: string[];
-    opinion: string[];
+    commentisfree: string[];
     culture: string[];
-    lifestyle: string[];
+    lifeandstyle: string[];
     business: string[];
     world: string[];
   };
@@ -31,11 +31,11 @@ export const getNews = (topics: string[]): Action => ({
 const initialState: NewsStateInterface = {
   news: {
     science: [],
-    tech: [],
+    technology: [],
     sport: [],
-    opinion: [],
+    commentisfree: [],
     culture: [],
-    lifestyle: [],
+    lifeandstyle: [],
     business: [],
     world: [],
   },
@@ -49,10 +49,17 @@ const newsReducer = (
   switch (action.type) {
     case `${GET_NEWS} ${API_SUCCESS}`: {
       const newsFound = action.payload.data.response.results;
+      const { topic } = action.payload.meta.extraData;
       const newsByTopic = newsFound.filter(
-        article => article.sectionId === action.payload.meta.extraData.topic
+        article => article.sectionId === topic
       );
-      return { ...state, news: action.payload.data.response.results };
+      return {
+        ...state,
+        news: {
+          ...state.news,
+          [`${topic}`]: newsByTopic,
+        },
+      };
     }
 
     default:
